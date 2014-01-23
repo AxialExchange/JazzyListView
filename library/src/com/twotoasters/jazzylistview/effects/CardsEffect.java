@@ -1,9 +1,8 @@
 package com.twotoasters.jazzylistview.effects;
 
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 
-import com.nineoldandroids.view.ViewHelper;
-import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.twotoasters.jazzylistview.JazzyEffect;
 
 public class CardsEffect implements JazzyEffect {
@@ -12,10 +11,10 @@ public class CardsEffect implements JazzyEffect {
 
     @Override
     public void initView(View item, int position, int scrollDirection) {
-        ViewHelper.setPivotX(item, item.getWidth() / 2);
-        ViewHelper.setPivotY(item, item.getHeight() / 2);
-        ViewHelper.setRotationX(item, INITIAL_ROTATION_ANGLE * scrollDirection);
-        ViewHelper.setTranslationY(item, item.getHeight() * scrollDirection);
+        item.setPivotX(item.getWidth() / 2);
+        item.setPivotY(item.getHeight() / 2);
+        item.setRotationX(INITIAL_ROTATION_ANGLE * scrollDirection);
+        item.setTranslationY(item.getHeight() * scrollDirection);
     }
 
     @Override

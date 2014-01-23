@@ -7,10 +7,10 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.AbsListView;
 
-import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.twotoasters.jazzylistview.effects.CardsEffect;
 import com.twotoasters.jazzylistview.effects.CurlEffect;
 import com.twotoasters.jazzylistview.effects.FadeEffect;
@@ -192,8 +192,7 @@ public class JazzyHelper implements AbsListView.OnScrollListener {
     }
 
     private void doJazzinessImpl(View item, int position, int scrollDirection) {
-        ViewPropertyAnimator animator = com.nineoldandroids.view.ViewPropertyAnimator
-                .animate(item)
+        ViewPropertyAnimator animator = item.animate()
                 .setDuration(DURATION)
                 .setInterpolator(new AccelerateDecelerateInterpolator());
 

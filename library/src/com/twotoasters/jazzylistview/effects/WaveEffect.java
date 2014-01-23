@@ -1,16 +1,15 @@
 package com.twotoasters.jazzylistview.effects;
 
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 
-import com.nineoldandroids.view.ViewHelper;
-import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.twotoasters.jazzylistview.JazzyEffect;
 
 public class WaveEffect implements JazzyEffect {
 
     @Override
     public void initView(View item, int position, int scrollDirection) {
-        ViewHelper.setTranslationX(item, -item.getWidth());
+        item.setTranslationX(-item.getWidth());
     }
 
     @Override
